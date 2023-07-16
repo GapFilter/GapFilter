@@ -2,6 +2,7 @@
 #define _GAPFILTER_STRAW_H
 
 #include <bits/stdc++.h>
+#include <cstdlib>
 #include "BOBHash64.h"
 #include "params.h"
 #include "Packet.h"
@@ -35,18 +36,20 @@ public:
         for(int i = 0; i < size; i++){
             table[i].nextid = -1;
         }
+        srand(hash_seed);
         hash = new BOBHash64(hash_seed);
     }
 
     bool Solution(const Packet &packet)
     {
-        bool res = false; 
-        uint32_t index = (hash->run((const char *)packet.id.data, FLOWID_LEN)) % basesize;
-        
+        bool res = false;
+        int cnt = 1;
+        uint32_t bucket = (hash->run((const char *)packet.id.data, FLOWID_LEN)) % basesize;
+        uint32_t index = bucket;
         while(!(table[index].flowID == packet.id) && table[index].nextid != -1){
             index = table[index].nextid;
+            cnt ++;
         }
-
         if (table[index].flowID == packet.id){
             uint16_t delta = packet.seq - table[index].seq;
             if (delta >= T1 && delta < T2)
@@ -63,6 +66,11 @@ public:
                 nowid ++;
             }
             else{
+                cnt = rand() % cnt, index = bucket;
+                while(cnt > 0){
+                    index = table[index].nextid;
+                    cnt --;
+                }
                 table[index].flowID = packet.id;
                 table[index].seq = packet.seq;
             }
