@@ -131,13 +131,13 @@ error_res Error_count(GapFilter *GapFilter, vector<Packet> &dataset,
 
     map<FlowID,uint32_t> blacklist_res;
     blacklist_res.clear();
-    uint32_t total = dataset.size();
+    uint64_t total = dataset.size();
 
-    int section_st_i = 0;
+    uint64_t section_st_i = 0;
     int TimeWindowCount = 1;
     uint32_t section_ed = TimeWindow[1];
 
-    for (uint32_t i = 0; i <= total; ++i)
+    for (uint64_t i = 0; i <= total; ++i)
     {
         Packet packet;
         if(i != total) packet = dataset[i];
@@ -145,19 +145,15 @@ error_res Error_count(GapFilter *GapFilter, vector<Packet> &dataset,
         if (i == total || packet.time >= section_ed){
             if(i != 0)
             {
-                // printf("TimeWindow=%d,i=%d,section_st_i=%d,section_ed=%u\n",
-                //        TimeWindowCount,i,section_st_i,section_ed);
                 TimeWindowCount ++;
                 section_ed = TimeWindow[TimeWindowCount];
                 
                 flow_num.clear();
-                for(int j = section_st_i; j < i; j ++){
+                for(uint64_t j = section_st_i; j < i; j ++){
                     Packet packet = dataset[j];
                     flow_num.insert(packet.id);
                 }
                 section_st_i = i;
-                //printf("flow_num=%lu\n", flow_num.size());
-
                 blacklist_res.clear();
                 GapFilter->Report(blacklist_res);
                 MAE mae;
