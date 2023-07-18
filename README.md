@@ -22,9 +22,10 @@ In test.sh, we provided an simple way of adjusting the parameters of GapFilter-A
 | -r / --ratio       | the number of suspect cell in  GapFilter-AO within [0,8], adjusting the ratio of suspect/civilian vary from 0:8 to 8:0 (default 2:6)                           |
 | -s / --seed        | the hash seed                                                   |
 
-Above experiments all use the dataset file created in Parser as input.
-
 ## Periodic 
 
 acc.sh and accuracy.cpp are used for conducting experiments and comparing the accuracy (MAE, RMSE) of the three solutions on different memory sizes.
+
+Above experiments all use the dataset file created in Parser as input.
+
 
