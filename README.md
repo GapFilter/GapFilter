@@ -1,8 +1,8 @@
 # GapFilter
 
-## parser
-
 We implement our GapFilter-SO, GapFilter-AO, and Straw-man solutions in C++ on a CPU platform. 
+
+## parser
 
 In parser.sh and parser.cpp, we use a typical method of parsing the .pcap source file (and the time file for packet's timestamp, if exist) to create an output file in which each item follows the <FID, SEQ, TIMESTAMP> format, preparing for our subsequent experiments.
 
