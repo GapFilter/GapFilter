@@ -28,4 +28,5 @@ acc.sh and accuracy.cpp are used for conducting experiments and comparing the ac
 
 Above experiments all use the dataset file created in Parser as input.
 
-
+### References
+BOBHash (http://burtleburtle.net/bob/hash/evahash.html) is used as the hash function in the code.
