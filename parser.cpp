@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <netinet/in.h>
 #include <string>
-#include "Realtime/includes/parser.h"
+#include "GapFilter/includes/parser.h"
 using namespace std;
 
 double ftime = -1;
@@ -32,6 +32,7 @@ int main(int argc, char* argv[])
 
 	double tv_usec_s = 0, tv_usec_rs = 0;
 	bool have_ether_hdr_flag = true;
+	// For dataset MACCDC and IMC, haveVirtualLAN = true
 	bool haveVirtualLAN = false;
 	bool haveTimeFile = false;
 	string path, outpath, timepath;
@@ -50,12 +51,12 @@ int main(int argc, char* argv[])
 
 	FILE* pFile = fopen(path.c_str(), "rb");
 	if( pFile == 0){
-		printf( "parser: pcap source file error\n");
+		printf("parser: pcap source file error\n");
 		return 0;
 	}
 	FILE *output = fopen(outpath.c_str(),"wb");
 	if(output == 0){
-		printf( "parser.cpp: output file error\n");
+		printf("parser.cpp: output file error\n");
 		return 0;
 	}
 
