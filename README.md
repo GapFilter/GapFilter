@@ -12,7 +12,7 @@ acc.sh and accuracy.cpp are used for conducting experiments and comparing the ac
 
 throu.sh and throu.cpp are used for comparing the processing speeds of the three solutions.
 
-In test.sh, we provided an simple way of adjusting the parameters of GapFilter-AO and observing its accuracy. The meaning of some of the options are provided in the chart below: 
+In test.sh, we provide an simple way of adjusting the parameters of GapFilter-AO and observing its accuracy. The meaning of some of the options are provided in the chart below: 
 
 | Option name      | meaning                                                               |
 |--------------------|-----------------------------------------------------------------------|
@@ -24,7 +24,12 @@ In test.sh, we provided an simple way of adjusting the parameters of GapFilter-A
 
 ## Dataset
 
-We provide four datasets in. pcap format for testing, which are also used for accuracy tests in our paper.
+We provide the following links to download datasets in .pcap format for testing, which are also used for accuracy tests in our paper.
+
+CAIDA(equinix-nyc.dirA.20180315-130000.UTC.anon.pcap): https://data.caida.org/datasets/passive-2018
+MAWI: http://mawi.nezu.wide.ad.jp/mawi/samplepoint-F/2023/202305131400.pcap.gz
+MACCDC(2012): https://www.netresec.com/?page=MACCDC
+IMC: https://pages.cs.wisc.edu/~tbenson/IMC_DATA/univ1_trace.tgz
 
 ### References
 BOBHash (http://burtleburtle.net/bob/hash/evahash.html) is used as the hash function in the code.
