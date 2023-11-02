@@ -27,8 +27,11 @@ In test.sh, we provide an simple way of adjusting the parameters of GapFilter-AO
 We provide the following links to download datasets in .pcap format for testing, which are also used for accuracy tests in our paper.
 
 CAIDA(equinix-nyc.dirA.20180315-130000.UTC.anon.pcap): https://data.caida.org/datasets/passive-2018
+
 MAWI: http://mawi.nezu.wide.ad.jp/mawi/samplepoint-F/2023/202305131400.pcap.gz
+
 MACCDC(2012): https://www.netresec.com/?page=MACCDC
+
 IMC: https://pages.cs.wisc.edu/~tbenson/IMC_DATA/univ1_trace.tgz
 
 ### References
