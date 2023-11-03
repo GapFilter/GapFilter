@@ -8,6 +8,8 @@ In parser.sh and parser.cpp, we use a typical method of parsing the .pcap source
 
 ## GapFilter
 
+We provide the codes of GapFilter-SO, GapFilter-AO, and Straw-man solutions. The file with "GapFilter_XX_woSIMD" in its name is the corresponding implementation without SIMD acceleration, while "GapFilter_XX" uses acceleration technology. In simd.h and wosimd.h, we provide more implementations in variable bucket sizes and flexible parameters.
+
 acc.sh and accuracy.cpp are used for conducting experiments and comparing the accuracy (F1, PR, and RR) of the three solutions on different memory sizes.
 
 throu.sh and throu.cpp are used for comparing the processing speeds of the three solutions.
