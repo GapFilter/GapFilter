@@ -7,6 +7,9 @@
 #include "includes/GapFilter_Straw.h"
 #include "includes/GapFilter_SO.h" 
 #include "includes/GapFilter_AO.h"
+#include "includes/GapFilter_Straw_woSIMD.h"
+#include "includes/GapFilter_SO_woSIMD.h" 
+#include "includes/GapFilter_AO_woSIMD.h"
 using namespace std;
 
 #define MINMEM (30 * 1024)
