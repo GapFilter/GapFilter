@@ -75,7 +75,7 @@ void GenStandard(vector<bool> &standard, vector<Packet> &dataset){
         else
         {
             oldseq = mp[packet.id];
-            if (packet.seq > oldseq || oldseq - packet.seq >= THRES)
+            if (packet.seq > oldseq || oldseq - packet.seq >= 10000)
                 mp[packet.id] = packet.seq;
             if ((uint16_t)(packet.seq - oldseq) >= T1 && (uint16_t)(packet.seq - oldseq) < T2) 
                 standard.push_back(true);
